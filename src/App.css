@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+@media (min-width: 1024px) {
+
+    .b-img,
+    .t-img {
+        width: 35rem;
+        height: 20rem;
+    }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+@media (max-width: 640px) {
+
+    .mobile-section {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+
+
+    .top-image,
+    .bottom-image {
+        margin-right: 0;
+        right: 0;
+        top: 0;
+    }
+
+    .top-image3,
+    .bottom-image4 {
+        margin-right: 0;
+        right: 0;
+        top: 0;
+    }
+
+    .top-image {
+        top: -60px;
+        right: 40px;
+        height: 50%;
+    }
+
+    .bottom-image {
+        top: 10px;
+        /* Adjust to control vertical overlap */
+        left: 100px;
+
+    }
+
+    .top-image3 {
+        top: -55px;
+        right: 10px;
+        height: 50%;
+    }
+
+    .bottom-image4 {
+        top: 35px;
+        /* Adjust to control vertical overlap */
+        left: 120px;
+
+    }
+
+    .text-center {
+        text-align: center;
+       
+    }
+
+    .bg-orange-500.text-white.px-6.py-2.rounded {
+        margin: 1rem auto;
+        width: fit-content;
+    }
+
+    .desktop-button,
+    .desktop-text {
+        display: none;
+    }
+
+    .left-img,
+    .right-img {
+        height: 180%;
+    }
+
+    .side-img {
+        height: 120%;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .mobile-text {
+        font-size: 13px;
+        position: relative;
+        top: 29px;
+    }
+    
+    .mobile-button{
+        margin: 30px 0px 0px 120px;
+    }
+
+    .top-design{
+        margin-top: -40px;
+    }
+
+    .bottom-design{
+        margin-bottom: 10px;
+    }
+
+    .second-img{
+        padding-right: 10px;
+        border-radius: 10px;
+    }
+
+    .desktop-follow{
+        display: none;
+    }
+
+    .head-text{
+        font-size: 10px;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+    }
+    .carousel-text{
+        padding: 45px;
+    }
+
+    .testimonial{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (min-width: 641px) {
+    .mobile-only,.mobile-button {
+        display: none;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
