@@ -15,7 +15,7 @@ const FloatingContactMenu = () => {
       {/* Desktop Floating Menu (Each Item Slides Independently and Flush with Right Side) */}
       <div className="hidden lg:flex fixed bottom-10 right-0 flex-col items-end space-y-4 pr-1">
         <div
-          className={`bg-orange-600 text-white px-4 py-4 rounded-l-full flex items-center transition-transform duration-300 ease-in-out ${
+          className={`slide-btn text-white px-4 py-4 rounded-l-full flex items-center transition-transform duration-300 ease-in-out ${
             hoveredItem === 'contact' ? 'translate-x-0' : 'translate-x-full'
           }`}
           onMouseEnter={() => setHoveredItem('contact')}
@@ -30,7 +30,7 @@ const FloatingContactMenu = () => {
           <span>Contact Us</span>
         </div>
         <div
-          className={`bg-orange-600 text-white px-4 py-4 rounded-l-full flex items-center transition-transform duration-300 ease-in-out ${
+          className={`slide-btn text-white px-4 py-4 rounded-l-full flex items-center transition-transform duration-300 ease-in-out ${
             hoveredItem === 'solar' ? 'translate-x-0' : 'translate-x-full'
           }`}
           onMouseEnter={() => setHoveredItem('solar')}
@@ -46,7 +46,7 @@ const FloatingContactMenu = () => {
           <span>Solar Calculator</span>
         </div>
         <div
-          className={`bg-orange-600 text-white px-4 py-4 rounded-l-full flex items-center transition-transform duration-300 ease-in-out ${
+          className={`slide-btn text-white px-4 py-4 rounded-l-full flex items-center transition-transform duration-300 ease-in-out ${
             hoveredItem === 'locate' ? 'translate-x-0' : 'translate-x-full'
           }`}
           onMouseEnter={() => setHoveredItem('locate')}
@@ -64,8 +64,8 @@ const FloatingContactMenu = () => {
       </div>
 
       {/* Mobile Menu at Bottom */}
-      <div className="lg:hidden fixed bottom-0 w-full flex justify-center items-center bg-transparent z-50">
-        <div className="w-full flex justify-around bg-orange-600 text-white py-3">
+      <div className="lg:hidden fixed bottom-0  w-full flex justify-center items-center bg-transparent z-50">
+        <div className="w-full flex justify-around slide-btn text-white py-3">
           <button
             className="flex flex-col items-center"
             onClick={() => setIsOpen(!isOpen)}
@@ -81,7 +81,7 @@ const FloatingContactMenu = () => {
 
         {/* Drop-up Content for Quick Links */}
         {isOpen && (
-          <div className="fixed bottom-16 w-full bg-orange-600 text-white py-4 rounded-t-lg z-50">
+          <div className="fixed bottom-16 w-full bg-[#D15A33] text-white py-4 rounded-t-lg z-50">
             <div className="text-center relative">
               <button
                 className="absolute right-4 top-2 text-white"

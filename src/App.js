@@ -1,28 +1,59 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Index from './pages/solar_components/Index/Index';
 import About from './pages/solar_components/About/About'; // Import About component
-import Navbar from './pages/solar_components/layouts/Navbar';
-import BookingForm from './pages/solar_components/Index/BookingForm';
-import Footer from './pages/solar_components/layouts/Footer';
-import FloatingContactMenu from './pages/solar_components/layouts/FloatingContactMenu';
 import SolarCalculator from './pages/solar_components/Solar_Calculator/SolarCalculator';
+import DashboardLogin from './pages/dashboard/DashboardLogin';
+import Landing from './pages/solar_components/Landing';
+import SignUp from './pages/dashboard/SignUp';
+import DashboardLayout from './pages/dashboard/DashboardLayout'
+import DashboardIndex from './pages/dashboard/DashboardIndex';
 
 const App = () => {
-   return(
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/solar_calculator" element={<SolarCalculator/>} />
-      </Routes>
-      <BookingForm/>
-      <Footer />
-      <FloatingContactMenu />
-    </Router>
-   );
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Landing />,
+      children: [
+        {
+          index: true,
+          element: <Index />
+        },
+        {
+          path: '/about',
+          element: <About />
+        }
+        ,
+        {
+          path: '/solar_calculator',
+          element: <SolarCalculator />
+        }
+      ]
+    },
+    {
+      path: '/dashboard',
+      element: <DashboardLayout />,
+      children: [
+        {
+          index: true,
+          element: <DashboardIndex/>,
+        },
+        
+      ]
+    },
+    {
+      path: '/dashboardlogin', // Route for the SignIn page
+      element: <DashboardLogin />,
+    },
+    { 
+      path: '/signup', // Route for the SignIn page
+      element: <SignUp />,
+    },
+    
+  ])
+  return  <RouterProvider router={router} />
+   
 }
 
 export default App;

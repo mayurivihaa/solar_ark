@@ -1,21 +1,72 @@
 @media (min-width: 1024px) {
 
-    .b-img,
-    .t-img {
-        width: 35rem;
+    
+    .t-img, .b-img{
+        width: 28rem;
         height: 20rem;
     }
+    
 }
 
 
-@media (max-width: 640px) {
+    @media (max-width: 640px) {
+    .footer-link{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .last{
+        padding-bottom: 25px;
+    }
+
+    .quick-contact{
+        gap: 150px;
+    }
+
+    .quick-link{
+        padding-left: 5px;
+    }
+
+    .solar-dot1{
+        width: 30px;
+        bottom: 30px;
+    }
+
+    .second-question-column{
+        padding-top: 60px;
+
+    }
+
+    .get-consultation-btn{
+        margin-left: 60px;
+    }
+
+    .city{
+        text-align: center;
+        justify-content: center;
+    }
+
+   .second-que{
+    font-size: 32px;
+    text-align: center;
+    justify-content: center;
+   }
+
+    .solution-content-sub{
+        height: 300px;
+    }
 
     .mobile-section {
         flex-direction: column;
-        padding: 1rem;
+       padding-left: 1rem;
+       padding-right: 1rem;
+       /* padding-bottom: 1rem; */
+       padding-top: 3rem;
     }
 
-
+.mobile-slide-buttons{
+    display: none;
+}
 
     .top-image,
     .bottom-image {
@@ -43,6 +94,8 @@
         left: 100px;
 
     }
+
+
 
     .top-image3 {
         top: -55px;
@@ -92,7 +145,7 @@
     }
     
     .mobile-button{
-        margin: 30px 0px 0px 120px;
+        margin: 50px 0px 0px 120px;
     }
 
     .top-design{
@@ -114,15 +167,59 @@
 
     .head-text{
         font-size: 10px;
-        /* background-color: rgba(0, 0, 0, 0.5); */
+        text-align: center;
+        justify-content: center;
+       right: 0;
+       left: 0;
     }
+
+    .solar-logo{
+        width: 100px;
+    }
+
+    .questing-img{
+      display: none;
+    }
+
     .carousel-text{
-        padding: 45px;
+        padding: 100px 30px 0px 30px;
+    }
+
+    .project-flex{
+        height: 100px;
     }
 
     .testimonial{
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    .testimonial-left{
+        margin-bottom: 150px;
+    }
+    .testimonial-right{
+        margin-bottom: 150px;
+    }
+
+    .project-icons{
+        display: none;
+    }
+
+    .project-icon-text{
+        font-size: 8px;
+    }
+
+    .project-icons-mobile1{
+        left: 0px;
+        bottom: -90px;
+    }
+    .project-icons-mobile2{
+        left: 0px;
+        bottom: -90px;
+    }
+    .project-icons-mobile3{
+        left: 0px;
+        bottom: -50px;
     }
 }
 
@@ -132,3 +229,56 @@
     }
 }
 
+
+@media (min-width: 1200px) {
+  .project-icons-mobile1, .project-icons-mobile2, .project-icons-mobile3{
+    display: none;
+  }
+
+  .head-text{
+    right: 0;
+     top: 0;
+      margin-right: 20px;
+  }
+
+  .solar-logo{
+    width: 150px;
+    height: 55px;
+  }
+
+  .quick-link{
+    padding-left: 120px;
+  }
+
+  
+     .project-flex{
+        height: 400px;
+    }
+    .main-flex{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+ }
+
+.solar-colour{
+  color: rgb(218, 87, 0);
+}
+
+.contact-solar{
+  background-color: rgb(218, 87, 0);
+}
+
+.slide-btn{
+  background-color: #D15A33;
+}
+
+
+
+.dotted{
+    background-image: url('assets/images/dotted-pattern.jpg');
+    
+}
+
+.solution-content-sub{
+    height: auto;
+}

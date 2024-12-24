@@ -47,12 +47,15 @@ const BookingForm = () => {
                 <div className="absolute inset-0 bg-red-900 opacity-90"></div>
             </div>
 
-            <div className="relative z-10 w-full max-w-screen-md px-6 sm:px-8 py-8 sm:py-12 rounded-lg shadow-lg">
+            <div className="relative z-10 w-full max-w-screen-lg px-6 sm:px-8 py-8 sm:py-12 rounded-lg shadow-lg">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white">
                     Book FREE <br /> consultation!
                 </h1>
-                <p className="mt-2 text-center text-gray-200 text-sm sm:text-base">
-                    Connect with our solar experts for honest, professional advice tailored to your needs
+                <p className="mt-2 text-center text-gray-200 text-xl sm:text-base">
+                    Connect with our solar experts for honest, professional
+                </p>
+                <p className="text-center text-gray-200 text-xl sm:text-base">
+                 advice tailored to your needs
                 </p>
 
                 <form className="mt-6 sm:mt-8 space-y-4" onSubmit={handleSubmit}>
@@ -126,7 +129,7 @@ const BookingForm = () => {
 
                     <button
                         type="submit"
-                        className="w-full py-3 mt-4 text-center text-red-700 bg-white rounded-md hover:bg-white focus:outline-none focus:ring-2 focus:ring-red-500"
+                        className="w-2/3 py-3 get-consultation-btn  text-center lg:ms-36 text-red-700 bg-white rounded-md hover:bg-white focus:outline-none focus:ring-2 focus:ring-red-500"
                     >
                         Get Free Consultation
                     </button>

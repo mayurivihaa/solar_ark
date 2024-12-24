@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
 
 
-<div className="bg-white py-8 border-t border-gray-200">
+<div className="bg-white py-12 border-t border-gray-200">
   <div className="container mx-auto px-4 lg:flex lg:justify-between text-gray-600">
     {/* Logo and About Section */}
     <div className="mb-6 lg:mb-0 lg:w-1/4">
@@ -29,7 +29,7 @@ const Footer = () => {
     </div>
 
     {/* Quick Links and Contact Us Section */}
-    <div className="lg:flex flex lg:space-x-8 w-full mb-6  text-center justify-center  lg:mb-0 lg:w-1/2">
+    <div className="lg:flex flex lg:space-x-8 w-full quick-link mb-6 quick-contact lg:mb-0 lg:w-1/2">
       {/* Quick Links Section */}
       <div className="mb-6 lg:mb-0 lg:w-1/2 ">
         <h2 className="font-semibold text-gray-800 mb-4">Quick Links</h2>
@@ -46,7 +46,7 @@ const Footer = () => {
         <h2 className="font-semibold text-gray-800 mb-4">Contact Us</h2>
         <p className="text-sm"><strong>Phone No.</strong><br />+00-888-27-240</p>
         <p className="mt-4 text-sm"><strong>Email Address</strong><br />support@info.com</p>
-        <p className="mt-4 text-sm"><strong>Registered Office</strong><br />Address in Lorem ipsum dolor</p>
+        <p className="mt-4 text-sm"><strong>Registered Office</strong><br />Address in Lorem </p>
       </div>
     </div>
 
@@ -60,13 +60,13 @@ const Footer = () => {
     </div>
   </div>
 
-  <div className="container mx-auto px-4 mt-8 border-t border-gray-200 pt-4 text-sm flex flex-col md:flex-row justify-between text-gray-500">
-    <div className="flex space-x-4 mb-4 md:mb-0">
+  <div className="container mx-auto px-4 last mt-8  border-t border-gray-200 pt-4 text-sm flex flex-col md:flex-row justify-between text-gray-500">
+    <div className="flex footer-link space-x-4 mb-4 md:mb-0">
       <a href="#privacy" className="hover:underline">Privacy Policy</a>
       <a href="#terms" className="hover:underline">Terms of Service</a>
       <a href="#cookies" className="hover:underline">Cookies Settings</a>
     </div>
-    <p>© 2024 solarark.com. All rights reserved.</p>
+    <p className='text-center'>© 2024 solarark.com. All rights reserved.</p>
   </div>
 </div>
 
