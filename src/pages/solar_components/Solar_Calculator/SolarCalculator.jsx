@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const SolarCalculator = () => {
   const [states, setStates] = useState([]);
@@ -11,6 +12,7 @@ const SolarCalculator = () => {
   const [plantCapacity, setPlantCapacity] = useState(0);
   const [sanctionLoad, setSanctionLoad] = useState(0);
   const [unit, setUnit] = useState("sqFeet");
+  const navigate = useNavigate();
   const fallbackStates = [
     { _id: 1, name: "Andhra Pradesh" },
     { _id: 2, name: "Arunachal Pradesh" },
@@ -105,40 +107,25 @@ const SolarCalculator = () => {
     const cumulativeEquivalentTreesPlanted =
       equivalentTreesPlantedPerYear * yearsOfSavings;
 
-    // Show results in alert
-    // alert(
-    //   `monthly consumption:${monthlyConsumption.toFixed(2)} kwh\n` +
-    //     `Daily Energy Requirement : ${dailyEnergyRequirement.toFixed(
-    //       2
-    //     )} kWh\n` +
-    //     `Reruired system Capacity: ${requiredSystemCapacity.toFixed(2)} kWh\n` +
-    //     `Required Roof Area: ${areaRequired.toFixed(2)} sq.m.\n` +
-    //     `Calculated Plant Capacity: ${calculatedPlantCapacity.toFixed(
-    //       2
-    //     )} kW\n` +
-    //     `Monthly Saving: ${monthlySavings.toFixed(2)} kW\n` +
-    //     `Available Roof Area Capacity: ${maxCapacityFromRoof.toFixed(
-    //       2
-    //     )} kWh\n` +
-    //     `Annual Energy Generation: ${annualEnergyGeneration.toFixed(
-    //       2
-    //     )} kg/year\n` +
-    //     `Max capacity of investment: ${maxCapacityFromInvestment.toFixed(
-    //       2
-    //     )} kg/year\n` +
-    //     `CO₂ Savings (per year): ${co2SavingsKg.toFixed(
-    //       2
-    //     )} kg / ${co2SavingsMetricTons.toFixed(2)} metric tons\n` +
-    //     `CO₂ Savings (25 years): ${cumulativeCo2SavingsKg.toFixed(
-    //       2
-    //     )} kg / ${cumulativeCo2SavingsMetricTons.toFixed(2)} metric tons\n` +
-    //     `Equivalent Trees Planted (per year): ${equivalentTreesPlantedPerYear.toFixed(
-    //       2
-    //     )} trees/year\n` +
-    //     `Cumulative Equivalent Trees Planted (25 years): ${cumulativeEquivalentTreesPlanted.toFixed(
-    //       2
-    //     )} trees`
-    // );
+    const resultData = {
+      monthlyConsumption,
+      dailyEnergyRequirement,
+      requiredSystemCapacity,
+      areaRequired,
+      calculatedPlantCapacity,
+      monthlySavings,
+      maxCapacityFromRoof,
+      annualEnergyGeneration,
+      maxCapacityFromInvestment,
+      co2SavingsKg,
+      co2SavingsMetricTons,
+      cumulativeCo2SavingsKg,
+      cumulativeCo2SavingsMetricTons,
+      equivalentTreesPlantedPerYear,
+      cumulativeEquivalentTreesPlanted,
+    };
+
+    navigate("/recalculate", { state: resultData });
   };
 
   return (
@@ -304,13 +291,13 @@ const SolarCalculator = () => {
           </div>
 
           <div className="mt-6 text-center">
-            <Link
-              to={"/recalculate"}
+            <button
+              // to={"/recalculate"}
               onClick={handleCalculate}
               className="py-2 px-6 bg-orange-600 text-white font-semibold rounded-md hover:bg-orange-700 transition duration-200"
             >
               Calculate
-            </Link>
+            </button>
           </div>
         </div>
       </div>
