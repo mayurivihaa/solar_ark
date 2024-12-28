@@ -9,6 +9,9 @@ import Landing from './pages/solar_components/Landing';
 import SignUp from './pages/dashboard/SignUp';
 import DashboardLayout from './pages/dashboard/DashboardLayout'
 import DashboardIndex from './pages/dashboard/DashboardIndex';
+import ContactUs from './pages/solar_components/Contact/ContactUs';
+import Services from './pages/solar_components/Services/Services';
+import ReCalculate from './pages/solar_components/Solar_Calculator/ReCalculate';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -26,6 +29,21 @@ const App = () => {
         }
         ,
         {
+          path: '/contact',
+          element: <ContactUs />
+        }
+        ,
+        {
+          path: '/services',
+          element: <Services />
+        }
+        ,
+        {
+          path: '/recalculate',
+          element: <ReCalculate />
+        }
+        ,
+        {
           path: '/solar_calculator',
           element: <SolarCalculator />
         }
@@ -37,23 +55,23 @@ const App = () => {
       children: [
         {
           index: true,
-          element: <DashboardIndex/>,
+          element: <DashboardIndex />,
         },
-        
+
       ]
     },
     {
       path: '/dashboardlogin', // Route for the SignIn page
       element: <DashboardLogin />,
     },
-    { 
+    {
       path: '/signup', // Route for the SignIn page
       element: <SignUp />,
     },
-    
+
   ])
-  return  <RouterProvider router={router} />
-   
+  return <RouterProvider router={router} />
+
 }
 
 export default App;

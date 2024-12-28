@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle state for mobile
@@ -10,7 +10,7 @@ const Navbar = () => {
       </div> */}
       <div className="relative">
         {/* Mobile Number and Address for Desktop Only */}
-        <p className='head-text lg:text-1xl py-2 text-white absolute z-10 '>
+        <p className="head-text lg:text-1xl py-2 text-white absolute z-10 ">
           Service Number: 9999XXXXXX, Customer Care Number: 9999XXXXXX
         </p>
 
@@ -28,10 +28,12 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6 font-semibold"> {/* Increased font-weight */}
+          <div className="hidden md:flex space-x-6 font-semibold">
+            {/* Increased font-weight */}
             <a href="#projects">Our Projects</a>
             <a href="#join">Join us</a>
             <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
             <a href="#earn">Earn with us</a>
           </div>
 
@@ -52,7 +54,11 @@ const Navbar = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                  d={
+                    isMenuOpen
+                      ? "M6 18L18 6M6 6l12 12"
+                      : "M4 6h16M4 12h16M4 18h16"
+                  }
                 />
               </svg>
             </button>
@@ -69,10 +75,21 @@ const Navbar = () => {
             style={{ width: '150px' }} 
           />
          </Link> */}
-              <a href="#projects" className="text-dark">Our Projects</a>
-              <a href="#join" className="text-dark">Join us</a>
-              <a href="/about" className="text-dark">About Us</a>
-              <a href="#earn" className="text-dark">Earn with us</a>
+              <a href="#projects" className="text-dark">
+                Our Projects
+              </a>
+              <a href="#join" className="text-dark">
+                Join us
+              </a>
+              <a href="/about" className="text-dark">
+                About Us
+              </a>
+              <a href="/contact" className="text-dark">
+                Contact Us
+              </a>
+              <a href="#earn" className="text-dark">
+                Earn with us
+              </a>
             </div>
           )}
         </nav>
