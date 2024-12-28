@@ -44,22 +44,25 @@ const ContactUs = () => {
         <h1 className="text-1xl sm:text-3xl md:text-4xl font-semibold sm:px-2">
           Contact Us
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-          <div className="shadow-lg bg-[#D15A33]">
+        <div className="grid grid-cols-3 gap-6 mt-5">
+          {/* First Column: Smaller Width */}
+          <div className="col-span-1 shadow-lg bg-[#D15A33]">
             <div className="card transition-transform duration-200 hover:scale-105 text-white min-h-60">
-              <div className="card-body ">
+              <div className="card-body">
                 <h2 className="card-title">Registered Office</h2>
                 <h2>Adani Corporate House</h2>
                 <h2 className="card-text">
                   Shantigram, Near Vaishnodevi Circle, S G Highway,
-                  Ahmedabad-382421, Gujarat, India. .
+                  Ahmedabad-382421, Gujarat, India.
                 </h2>
                 <p>Tel : +91-79-26565555</p>
               </div>
             </div>
           </div>
-          <div className="shadow-lg">
-            <div className="card border  rounded-none">
+
+          {/* Second Column: Larger Width */}
+          <div className="col-span-2 shadow-lg">
+            <div className="card border rounded-none">
               <div className="card-body transition-transform duration-200 hover:scale-105">
                 <h2 className="card-title">Operating Offices</h2>
                 <p className="font-bold mt-2">Mundra</p>
@@ -82,7 +85,7 @@ const ContactUs = () => {
                   34, Devaraja Urs Road, Race Course, Bangalore 560 001,
                   Karnataka, India
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 ">
+                <div className="grid grid-cols-1 md:grid-cols-2">
                   <p>Tel : +91-79-26565555</p>
                   <p>Tel : +91-79-26565555</p>
                 </div>
@@ -90,6 +93,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
+
         <div>
           <div>
             <div className="p-1 lg:py-12 font-bold text-2xl mb-2">

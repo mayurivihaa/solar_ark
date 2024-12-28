@@ -70,24 +70,24 @@ const SolarCalculator = () => {
 
     // Step 4: Check if the available area
     let areaRequired = requiredSystemCapacity * 10; // in sq. meters
-    const maxCapacityFromRoof = roofArea / roofAreaPerKW;
+    // const maxCapacityFromRoof = roofArea / roofAreaPerKW;
 
-    if (roofArea < areaRequired) {
-      // Adjust system capacity based on available area
-      requiredSystemCapacity = roofArea / 10;
-      areaRequired = roofArea;
-    }
+    // if (roofArea < areaRequired) {
+    //   // Adjust system capacity based on available area
+    //   requiredSystemCapacity = roofArea / 10;
+    //   areaRequired = roofArea;
+    // }
 
     areaRequired = Number(areaRequired);
 
     // Step 5: Adjust capacity based on area and investment
-    const maxCapacityFromInvestment = investment / costPerKW;
-    const calculatedPlantCapacity = Math.min(
-      requiredSystemCapacity,
-      maxCapacityFromRoof,
-      maxCapacityFromInvestment,
-      sanctionLoad || Infinity
-    );
+    // const maxCapacityFromInvestment = investment / costPerKW;
+    // const calculatedPlantCapacity = Math.min(
+    //   requiredSystemCapacity,
+    //   maxCapacityFromRoof,
+    //   maxCapacityFromInvestment,
+    //   sanctionLoad || Infinity
+    // );
 
     // calculate co2
     const annualEnergyGeneration = requiredSystemCapacity * solarHours * 365;
@@ -95,12 +95,12 @@ const SolarCalculator = () => {
     const co2SavingsKg = annualEnergyGeneration * co2EmissionFactor; // in kg/year
     const co2SavingsMetricTons = co2SavingsKg / 1000;
     const cumulativeCo2SavingsKg = co2SavingsKg * yearsOfSavings; // 25 years
-    const cumulativeCo2SavingsMetricTons = cumulativeCo2SavingsKg;
+    const cumulativeCo2SavingsMetricTons = cumulativeCo2SavingsKg / 1000;
 
     // Step 6: Calculate estimated monthly savings
-    const dailyGeneration = calculatedPlantCapacity * solarHours; // kWh/day
-    const monthlyGeneration = dailyGeneration * 30; // kWh/month
-    const monthlySavings = monthlyGeneration * tariffRate;
+    // const dailyGeneration = calculatedPlantCapacity * solarHours; // kWh/day
+    // const monthlyGeneration = dailyGeneration * 30; // kWh/month
+    // const monthlySavings = monthlyGeneration * tariffRate;
 
     //tree plantation
     const equivalentTreesPlantedPerYear = co2SavingsKg / treeAbsorptionRate;
@@ -112,11 +112,11 @@ const SolarCalculator = () => {
       dailyEnergyRequirement,
       requiredSystemCapacity,
       areaRequired,
-      calculatedPlantCapacity,
-      monthlySavings,
-      maxCapacityFromRoof,
+      // calculatedPlantCapacity,
+      // monthlySavings,
+      // maxCapacityFromRoof,
       annualEnergyGeneration,
-      maxCapacityFromInvestment,
+      // maxCapacityFromInvestment,
       co2SavingsKg,
       co2SavingsMetricTons,
       cumulativeCo2SavingsKg,

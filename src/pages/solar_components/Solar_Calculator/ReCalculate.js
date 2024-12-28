@@ -24,10 +24,10 @@ const ReCalculate = () => {
                         <p>Area Required: {data.areaRequired.toFixed(2)} sq.m.</p>
                         {/* <p>Calculated Plant Capacity: {data.calculatedPlantCapacity.toFixed(2)} kW</p> */}
                         {/* <p>Monthly Savings: ₹{data.monthlySavings.toFixed(2)}</p> */}
-                        <p>Available Roof Area Capacity: {data.maxCapacityFromRoof.toFixed(2)} kWh</p>
+                        {/* <p>Available Roof Area Capacity: {data.maxCapacityFromRoof.toFixed(2)} kWh</p> */}
                         <p>Annual Energy Generation: {data.annualEnergyGeneration.toFixed(2)} kWh/year</p>
                         <p>CO₂ Savings (per year): {data.co2SavingsKg.toFixed(2)} kg ({data.co2SavingsMetricTons.toFixed(2)} metric tons)</p>
-                        <p>CO₂ Savings (25 years): {data.cumulativeCo2SavingsKg.toFixed(2)} kg ({data.cumulativeCo2SavingsMetricTons.toFixed(2)} metric tons)</p>
+                        <p>CO₂ Savings (25 years): {data.cumulativeCo2SavingsKg.toFixed(2)} kg / ({data.cumulativeCo2SavingsMetricTons.toFixed(2)} metric tons)</p>
                         <p>Equivalent Trees Planted (per year): {data.equivalentTreesPlantedPerYear.toFixed(2)} trees/year</p>
                         <p>Cumulative Equivalent Trees Planted (25 years): {data.cumulativeEquivalentTreesPlanted.toFixed(2)} trees</p>
                     </div>
