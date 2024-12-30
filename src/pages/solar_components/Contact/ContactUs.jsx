@@ -1,171 +1,229 @@
-import React, { useState } from "react";
-import axios from "axios";
-import ReCAPTCHA from "react-google-recaptcha";
+import React from "react";
+import solarPanel1 from "../../../assets/images/newslide2.png";
+import solarPanel2 from "../../../assets/images/bottom-right.png";
+import solarPanel3 from "../../../assets/images/solar-panel3.jpeg";
 
 const ContactUs = () => {
-  const [formData2, setFormData2] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    contactNumber: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData2({ ...formData2, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/api/contactForm",
-        formData2
-      );
-      console.log(formData2);
-
-      alert(response.data.message);
-      setFormData2({
-        name: "",
-        email: "",
-        subject: "",
-        contactNumber: "",
-        message: "",
-      });
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Error submitting form");
-    }
-  };
   return (
     <>
-      <div className="relative h-40 sm:h-28 lg:bg-gradient-to-b lg:from-black lg:to-white mobile-header"></div>
-      <div className="lg:px-12 py-8 sm:py-12 m-4">
-        <h1 className="text-1xl sm:text-3xl md:text-4xl font-semibold sm:px-2">
-          Contact Us
-        </h1>
-        <div className="grid grid-cols-3 gap-6 mt-5">
-          {/* First Column: Smaller Width */}
-          <div className="col-span-1 shadow-lg bg-[#D15A33]">
-            <div className="card transition-transform duration-200 hover:scale-105 text-white min-h-60">
-              <div className="card-body">
-                <h2 className="card-title">Registered Office</h2>
-                <h2>Adani Corporate House</h2>
-                <h2 className="card-text">
-                  Shantigram, Near Vaishnodevi Circle, S G Highway,
-                  Ahmedabad-382421, Gujarat, India.
-                </h2>
-                <p>Tel : +91-79-26565555</p>
-              </div>
+      <div className="relative h-screen">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={solarPanel1}
+            alt="Slide"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        {/* Overlay Content Positioned at the Bottom */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-center text-center text-white pb-8">
+          <h1 className="m-0 text-4xl md:text-4xl font-bold">
+            India's top companies choose Solar Square
+          </h1>
+          <button className="mt-4 bg-red-800 re text-white py-4 px-6 rounded-md">
+            Get A Quote
+          </button>
+        </div>
+      </div>
+
+      {/* solar project */}
+      <div className="bg-red-800 flex flex-col items-center py-12">
+        <div className="grid solution-content grid-cols-1 md:grid-cols-2 gap-6 max-w-full md:max-w-8xl  px-5 ">
+          <div className="p-6 flex flex-col justify-center  text-white  relative overflow-hidden">
+            <h3 className="lg:text-3xl md:text-1xl font-semibold mb-4 ">
+              Submit a
+            </h3>
+            <h3 className="lg:text-3xl md:text-1xl font-semibold mb-4">
+              <span className="text-[#ef8935]">Solar Projects</span> enquiry
+            </h3>
+            <p className=" mb-6">
+              Our solar experts will guide you in your project
+            </p>
+          </div>
+
+          {/* form */}
+          <form className="rounded-lg p-6 flex flex-col bg-white relative overflow-hidden border transition">
+            <div className="mb-4">
+              <label className="text-lg font-medium text-gray-700 block">
+                Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="text-lg font-medium text-gray-700 block">
+                Company Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="text-lg font-medium text-gray-700 block">
+                WhatsApp Number <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="text-lg font-medium text-gray-700 block">
+                City <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="text-lg font-medium text-gray-700 block">
+                Company Pin Code
+              </label>
+              <input
+                type="text"
+                className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="text-lg font-medium text-gray-700 block">
+                Average Monthly Bill <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <button className="btn text-left text-white bg-orange-600">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+      {/* section fourth */}
+      <div className="bg-white flex flex-col items-center py-12">
+        <h2 className="p-3 text-4xl text-center font-bold text-gray-800 mb-8">
+          Hassel-free professional and friendly installtion experience
+          <span className="block text-center">
+            we are committed to making your solar journey easier
+          </span>
+        </h2>
+        <div className="h-[400px] grid solution-content grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl px-4">
+          <div
+            className="flex flex-col justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
+            style={{ backgroundImage: `url(${solarPanel2})` }}
+          >
+            <div className="flex flex-col justify-end p-2 flex-grow">
+              <h3 className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
+                Innovative Technology
+              </h3>
+              <p className="text-white">
+                We Utilize The Latest Advancements In Solar Technology To
+                Deliver Top-Of-The-Line Products That Offer Superior Performance
+                And Durability.
+              </p>
             </div>
           </div>
 
-          {/* Second Column: Larger Width */}
-          <div className="col-span-2 shadow-lg">
-            <div className="card border rounded-none">
-              <div className="card-body transition-transform duration-200 hover:scale-105">
-                <h2 className="card-title">Operating Offices</h2>
-                <p className="font-bold mt-2">Mundra</p>
-                <p>
-                  Village Tunda & Siracha, Taluka Mundra, Mundra, Kutch 370 435,
-                  Gujarat, India
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                  <p>Tel : +91-79-26565555</p>
-                  <p>Tel : +91-79-26565555</p>
-                </div>
-                <p className="font-bold mt-2">Mundra</p>
-                <p>
-                  NH 90, Atru Road, Village Kawai, Taluka Atru, Baran 325 219,
-                  Rajasthan, India Tel : +91 7451 24 5910
-                </p>
-                <p className="font-bold mt-2">Mundra</p>
-                <p>
-                  (A Subsidiary of Adani Power Limited), Lotus Tower, 1st Floor,
-                  34, Devaraja Urs Road, Race Course, Bangalore 560 001,
-                  Karnataka, India
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                  <p>Tel : +91-79-26565555</p>
-                  <p>Tel : +91-79-26565555</p>
-                </div>
-              </div>
+          <div
+            className="flex flex-col justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
+            style={{ backgroundImage: `url(${solarPanel3})` }}
+          >
+            <div className="flex flex-col justify-end p-2 flex-grow">
+              <h3 className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
+                Sustainability Focus
+              </h3>
+              <p className="text-white">
+                At The Core Of Our Operations Is A Commitment To Environmental
+                Stewardship. We Strive To Reduce Our Carbon Footprint And ctices
+                Throughout Our Business.
+              </p>
             </div>
           </div>
         </div>
+      </div>
+      {/* fifth section */}
+      <div className="bg-[#f9ebe5] flex flex-col items-center py-12">
+        <div className="flex mt-4 flex-col md:flex-row  overflow-hidden max-w-4xl mx-auto">
+          {/* Image Section */}
+          <div className="flex-[1] h-48 md:h-auto"></div>
 
-        <div>
-          <div>
-            <div className="p-1 lg:py-12 font-bold text-2xl mb-2">
-              Write to Us
-            </div>
+          {/* Text Section */}
+          <div className="flex-[2] bg-white p-6">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              Card Title
+            </h2>
+            <p className="text-gray-600 mb-6">
+              This is a detailed description or text content that goes alongside
+              the image. You can write as much as needed here. This is a
+              detailed description or text content that goes alongside the
+              image. You can write as much as needed here.
+            </p>
+            <button className="px-4 py-2 bg-orange-600 text-white rounded-md">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* section seventh */}
+      <div className="bg-white flex flex-col items-center py-12">
+        <h2 className="text-4xl text-center font-bold text-gray-800 mb-8">
+          Exceptional quality. End-to-end service. Delighted customers
+        </h2>
+        <div className="flex flex-col md:flex-row border rounded-lg shadow-lg overflow-hidden max-w-4xl mx-auto">
+          {/* Image Section */}
+          <div className="flex-[1] h-48 md:h-auto">
+            <img
+              src={solarPanel1}
+              alt="solarPanel1"
+              className="h-full w-full object-cover"
+            />
           </div>
 
-          <div className="container border px-3 py-3">
-            <form onSubmit={handleSubmit} className="sm:mt-8 space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  name="name"
-                  className="shadow-lg w-full px-4 py-3 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={formData2.name}
-                  onChange={handleChange}
-                  required
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  name="email"
-                  className="shadow-lg w-full px-4 py-3 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={formData2.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <select
-                  name="subject"
-                  className="shadow-lg form-select w-full text-gray-400 px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  // aria-label="Default select example"
-                  value={formData2.subject}
-                  onChange={handleChange}
-                  required
-                >
-                  <option>Subject of message</option>
-                  <option value="1">General Inquiry</option>
-                  <option value="2">Bussiness</option>
-                  <option value="3">Media</option>
-                  <option value="3">Website Feedback</option>
-                  <option value="3">Investors</option>
-                </select>
+          {/* Text Section */}
+          <div className="flex-[2] bg-white p-6">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              Card Title
+            </h2>
+            <p className="text-gray-600 mb-6">
+              This is a detailed description or text content that goes alongside
+              the image. You can write as much as needed here. This is a
+              detailed description or text content that goes alongside the
+              image. You can write as much as needed here.
+            </p>
+            <button className="px-4 py-2 bg-orange-600 text-white rounded-md">
+              Learn More
+            </button>
+          </div>
+        </div>
+        {/* card 2 */}
+        <div className="flex mt-4 flex-col md:flex-row border rounded-lg shadow-lg overflow-hidden max-w-4xl mx-auto">
+          {/* Image Section */}
+          <div className="flex-[1] h-48 md:h-auto">
+            <img
+              src={solarPanel1}
+              alt="solarPanel1"
+              className="h-full w-full object-cover"
+            />
+          </div>
 
-                <input
-                  type="number"
-                  placeholder="Contact Number"
-                  name="contactNumber"
-                  className="shadow-lg w-full px-4 py-3 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={formData2.contactNumber}
-                  onChange={handleChange}
-                  require
-                />
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <textarea
-                  className="shadow-lg form-control w-full px-4 py-3 text-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                  name="message"
-                  value={formData2.message}
-                  onChange={handleChange}
-                  require
-                  placeholder="Message"
-                ></textarea>
-              </div>
-              <button className="mt-3 border p-2 font-bold bg-slate-100 rounded">
-                Submit
-              </button>
-            </form>
+          {/* Text Section */}
+          <div className="flex-[2] bg-white p-6">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              Card Title
+            </h2>
+            <p className="text-gray-600 mb-6">
+              This is a detailed description or text content that goes alongside
+              the image. You can write as much as needed here. This is a
+              detailed description or text content that goes alongside the
+              image. You can write as much as needed here.
+            </p>
+            <button className="px-4 py-2 bg-orange-600 text-white rounded-md">
+              Learn More
+            </button>
           </div>
         </div>
       </div>

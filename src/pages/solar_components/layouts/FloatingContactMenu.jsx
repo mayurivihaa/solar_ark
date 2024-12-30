@@ -5,6 +5,7 @@ import {
   FaMapMarkerAlt,
   FaCalculator,
   FaTimes,
+  FaLink,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -77,12 +78,12 @@ const FloatingContactMenu = () => {
             className="flex flex-col items-center"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <FaCalculator className="mb-1" />
+            <FaLink className="mb-1" />
             <span>Quick Links</span>
           </button>
           <button className="flex flex-col items-center" onClick={handleClick}>
-            <FaMapMarkerAlt className="mb-1" />
-            <span>Solar Calculator</span>
+            <FaCalculator className="mb-1" />
+            <a href="/solar_calculator">Solar Calculator</a>
           </button>
         </div>
 
