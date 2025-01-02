@@ -43,7 +43,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#solarcal" className="hover:underline">
+                  <a href="/solar_calculator" className="hover:underline">
                     Solar Calculator
                   </a>
                 </li>
