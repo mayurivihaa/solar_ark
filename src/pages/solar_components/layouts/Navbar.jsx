@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { MdArrowOutward } from "react-icons/md";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle state for mobile
@@ -15,7 +16,7 @@ const Navbar = () => {
         </p>
 
         {/* Navbar */}
-        <nav className="absolute  top-0 left-0 right-0 z-10 bg-white rounded-lg mx-10 mt-10 text-dark lg:p-4 flex justify-between shadow-md items-center">
+        <nav className="absolute  top-0 left-0 right-0 z-10 bg-white rounded-lg mx-10 mt-10 text-dark lg:p-4 flex justify-between  shadow-md items-center">
           <div className="flex items-center">
             <Link to="/">
               <img
@@ -30,11 +31,21 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6 font-semibold">
             {/* Increased font-weight */}
-            <a href="#projects">Our Projects</a>
-            <a href="#join">Join us</a>
+            <a href="/home">Home</a>
+            <a href="/careers">Careers</a>
             <a href="/about">About Us</a>
+            <a href="/services">Services</a>
             <a href="/contact">Contact Us</a>
-            <a href="#earn">Earn with us</a>
+            <a href="/ourteam">Our Team</a>
+            <a href="/earnwithus">Earn with us</a>
+          </div>
+          <div>
+            <a
+              href="/contact"
+              className="text-white  p-2 px-2 bg-red-900 rounded-full hidden sm:block"
+            >
+              Get Quote
+            </a>
           </div>
 
           {/* Mobile Toggle Button */}
@@ -66,7 +77,7 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="absolute top-11 h-[600px] left-0 right-0 bg-white p-4 flex flex-col items-center space-y-8 z-20">
+            <div className="absolute top-11 h-[600px] left-0 right-0 bg-white p-4 flex flex-col sm:justify-end items-center space-y-8 z-20">
               {/* <Link to="/">
          <img
             src={`${process.env.PUBLIC_URL}/assets/main-logo.jpeg`}
@@ -75,20 +86,32 @@ const Navbar = () => {
             style={{ width: '150px' }} 
           />
          </Link> */}
-              <a href="#projects" className="text-dark">
-                Our Projects
+              <a href="/home" className="text-dark">
+                Home
               </a>
-              <a href="#join" className="text-dark">
-                Join us
+              <a href="/careers" className="text-dark">
+                Careers
               </a>
               <a href="/about" className="text-dark">
                 About Us
               </a>
+              <a href="/services" className="text-dark">
+                Services
+              </a>
               <a href="/contact" className="text-dark">
                 Contact Us
               </a>
-              <a href="#earn" className="text-dark">
+              <a href="/ourteam" className="text-dark">
+                Our Team
+              </a>
+              <a href="/earnwithus" className="text-dark">
                 Earn with us
+              </a>
+              <a
+                href="signup"
+                className="text-white  p-2 px-2 bg-red-900 rounded-full"
+              >
+                Get Quote
               </a>
             </div>
           )}

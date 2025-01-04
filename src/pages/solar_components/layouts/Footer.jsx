@@ -16,8 +16,8 @@ const Footer = () => {
               />
             </div>
             <p className="mt-4 text-sm  text-center justify-center">
-              Lorem ipsum dolor sit amet consectetur. Cursus elementum diam nunc
-              liberoLorem ipsum dolor sit amet consectetur.
+              We Utilize The Latest Advancements In Solar Technology To Deliver
+              Performance And Durability.
             </p>
 
             {/* Follow Us Section - Mobile Only */}

@@ -12,6 +12,10 @@ import DashboardIndex from './pages/dashboard/DashboardIndex';
 import ContactUs from './pages/solar_components/Contact/ContactUs';
 import Services from './pages/solar_components/Services/Services';
 import ReCalculate from './pages/solar_components/Solar_Calculator/ReCalculate';
+import Careers from './pages/solar_components/Careers/Careers';
+import Home from './pages/solar_components/Home/Home';
+import OurTeam from './pages/solar_components/OurTeam/OurTeam';
+import EarnWithUs from './pages/solar_components/EarnWithUS/EarnWithUs';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -23,6 +27,11 @@ const App = () => {
           index: true,
           element: <Index />
         },
+        {
+          path: '/home',
+          element: <Home />
+        }
+        ,
         {
           path: '/about',
           element: <About />
@@ -39,8 +48,23 @@ const App = () => {
         }
         ,
         {
+          path: '/earnwithus',
+          element: <EarnWithUs />
+        }
+        ,
+        {
           path: '/recalculate',
           element: <ReCalculate />
+        }
+        ,
+        {
+          path: '/ourteam',
+          element: <OurTeam />
+        }
+        ,
+        {
+          path: '/careers',
+          element: <Careers />
         }
         ,
         {

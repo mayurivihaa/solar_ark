@@ -30,12 +30,12 @@ const FloatingContactMenu = () => {
           style={{
             transform:
               hoveredItem === "contact" ? "translateX(0)" : "translateX(80%)",
-            width: "180px",
+            width: "230px",
             zIndex: 50,
           }}
         >
-          <FaPhone className="mr-2" />
-          <span>Contact Us</span>
+          <FaPhone className="mr-2 text-2xl" />
+          <a href="#contact">Contact Us</a>
         </div>
         <div
           className={`slide-btn text-white px-4 py-4 rounded-l-full flex items-center transition-transform duration-300 ease-in-out ${
@@ -46,12 +46,12 @@ const FloatingContactMenu = () => {
           style={{
             transform:
               hoveredItem === "solar" ? "translateX(0)" : "translateX(82%)",
-            width: "200px",
+            width: "240px",
             zIndex: 50,
           }}
         >
-          <FaCalculator className="mr-2" onClick={handleClick} />
-          <span>Solar Calculator</span>
+          <FaCalculator className="mr-2 text-2xl" onClick={handleClick} />
+          <a href="/solar_calculator">Solar Calculator</a>
         </div>
         <div
           className={`slide-btn text-white px-4 py-4 rounded-l-full flex items-center transition-transform duration-300 ease-in-out ${
@@ -62,12 +62,12 @@ const FloatingContactMenu = () => {
           style={{
             transform:
               hoveredItem === "locate" ? "translateX(0)" : "translateX(82%)",
-            width: "200px",
+            width: "240px",
             zIndex: 50,
           }}
         >
-          <FaMapMarkerAlt className="mr-2" />
-          <span>Locate Us</span>
+          <FaMapMarkerAlt className="mr-2 text-2xl" />
+          <a href="#locate">Locate Us</a>
         </div>
       </div>
 

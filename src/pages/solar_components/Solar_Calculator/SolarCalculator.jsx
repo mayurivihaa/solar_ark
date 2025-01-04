@@ -13,7 +13,7 @@ const SolarCalculator = () => {
   const [plantCapacity, setPlantCapacity] = useState(0);
   const [sanctionLoad, setSanctionLoad] = useState(0);
   const [unit, setUnit] = useState("sqFeet");
-  const [isVisible, setIsVisible] = useState(false); // New state for visibility
+  const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
   const fallbackStates = [
     { _id: 1, name: "Andhra Pradesh" },
@@ -30,8 +30,6 @@ const SolarCalculator = () => {
     { _id: 12, name: "Kerala" },
     { _id: 13, name: "Madhya Pradesh" },
     { _id: 14, name: "Maharashtra" },
-
-    // Add more states here...
   ];
 
   // Fetch states from the backend API
@@ -40,7 +38,7 @@ const SolarCalculator = () => {
       try {
         const response = await fetch("http://localhost:5000/api/states"); // API endpoint to fetch states
         const data = await response.json();
-        setStates(data); // Update states array
+        setStates(data);
         console.log(data);
       } catch (error) {
         console.error("Error fetching states:", error);
