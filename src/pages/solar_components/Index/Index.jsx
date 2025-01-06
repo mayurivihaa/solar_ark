@@ -228,7 +228,7 @@ const Index = () => {
                 <img src={HomeIcon} className="" alt="" />
               </div>
             </div>
-            <a href="#home" className="text-2xl font-semibold text-black">
+            <a href="/services" className="text-2xl font-semibold text-black">
               Homes
             </a>
             <div className="mt-4 w-16 mx-auto border-b-2 border-orange-700"></div>
@@ -239,7 +239,7 @@ const Index = () => {
                 <img src={LocationIcon} className="" alt="" />
               </div>
             </div>
-            <a href="#housing" className="text-2xl font-semibold text-black">
+            <a href="/services" className="text-2xl font-semibold text-black">
               Housing Society
             </a>
             <div className="mt-4 w-16 mx-auto border-b-2 border-orange-700"></div>
@@ -250,7 +250,7 @@ const Index = () => {
                 <img src={IndustryIcon} className="" alt="" />
               </div>
             </div>
-            <a href="#industrial" className="text-2xl font-semibold text-black">
+            <a href="/services" className="text-2xl font-semibold text-black">
               Industrial
             </a>
             <div className="mt-4 w-16 mx-auto border-b-2 border-orange-700"></div>
@@ -261,7 +261,7 @@ const Index = () => {
                 <img src={CommercialIcon} className="" alt="" />
               </div>
             </div>
-            <a href="#commercial" className="text-2xl font-semibold text-black">
+            <a href="/services" className="text-2xl font-semibold text-black">
               Commercial
             </a>
             <div className="mt-4 w-16 mx-auto border-b-2 border-orange-700"></div>
@@ -657,13 +657,13 @@ const Index = () => {
             {" "}
             {/* Adjust height as needed */}
             <div className="first-img">
-              <div className="w-64 h-8 absolute top-3 bg-red-700 rounded-md self-start mb-4"></div>
+              <div className="w-64 h-8 absolute top-3  rounded-md self-start mb-4"></div>
               <img
                 src={`${process.env.PUBLIC_URL}/assets/solar_images/questioning.png`}
                 alt="Solar Panel 1"
                 className="rounded-lg w-full h-full object-cover"
               />
-              <div className="w-64 h-8  bg-[#D15A33] rounded-md absolute bottom-2 right-16 mt-4"></div>
+              <div className="w-64 h-8 rounded-md absolute bottom-2 right-16 mt-4"></div>
 
               {/* <div className="second-img">
                                 <img

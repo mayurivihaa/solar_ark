@@ -36,7 +36,7 @@ const About = () => {
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
             Powering a{" "}
             <span className="text-orange-600">Sustainable Future</span> with{" "}
-            <span className="text-orange-600">Solar Ark</span>
+            <span className="text-orange-600">Solar Ark </span>
             India
           </h1>
 

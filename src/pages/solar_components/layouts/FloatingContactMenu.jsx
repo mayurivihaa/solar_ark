@@ -35,7 +35,7 @@ const FloatingContactMenu = () => {
           }}
         >
           <FaPhone className="mr-2 text-2xl" />
-          <a href="#contact">Contact Us</a>
+          <a href="/contact">Contact Us</a>
         </div>
         <div
           className={`slide-btn text-white px-4 py-4 rounded-l-full flex items-center transition-transform duration-300 ease-in-out ${
@@ -67,7 +67,7 @@ const FloatingContactMenu = () => {
           }}
         >
           <FaMapMarkerAlt className="mr-2 text-2xl" />
-          <a href="#locate">Locate Us</a>
+          <a href="/locateus">Locate Us</a>
         </div>
       </div>
 

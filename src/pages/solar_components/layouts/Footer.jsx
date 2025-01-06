@@ -104,7 +104,8 @@ const Footer = () => {
             </a>
           </div>
           <p className="text-center">
-            © 2024 solarark.com. All rights reserved.
+            Copyright © 2025 SolarArk, India, All Rights Reserved. Powered by
+            BizLeapinc
           </p>
         </div>
       </div>

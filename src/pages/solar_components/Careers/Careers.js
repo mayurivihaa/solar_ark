@@ -1,125 +1,124 @@
-// import React, { useState, useEffect } from "react";
-
-// const Careers = () => {
-//     const [displayedText, setDisplayedText] = useState("");
-//     const fullText = "Welcome to our car animation demo!";
-//     const [isCarVisible, setIsCarVisible] = useState(false);
-
-//     useEffect(() => {
-//         let index = 0;
-
-//         const interval = setInterval(() => {
-//             if (index < fullText.length) {
-//                 setDisplayedText((prev) => prev + fullText[index]);
-//                 index++;
-//             } else {
-//                 clearInterval(interval);
-//                 setIsCarVisible(true); // Show the car after text animation
-//             }
-//         }, 100); // Adjust speed of typing here (in milliseconds)
-
-//         return () => clearInterval(interval);
-//     }, [fullText]);
-
-//     return (
-//         <div className="relative w-full h-screen bg-gray-100 flex items-center justify-center">
-//             {/* Typing Text */}
-//             <div className="absolute top-20 left-5 text-2xl font-bold text-gray-800">
-//                 {displayedText}
-//             </div>
-
-//             {/* Moving Car */}
-//             {isCarVisible && (
-//                 <div
-//                     className="absolute top-1/2 left-0 transform -translate-y-1/2 flex items-center space-x-4
-//           transition-transform duration-[5s] translate-x-[100vw] opacity-100"
-//                 >
-//                     <img
-//                         src={`${process.env.PUBLIC_URL}/assets/car.png`}
-//                         alt="Car"
-//                         className="w-16 h-16"
-//                     />
-//                 </div>
-//             )}
-//         </div>
-//     );
-// };
-
-// export default Careers;
-
-
-
-
-// import React from 'react'
-// import City from "../../../assets/images/city-bg.png";
-
-// const Careers = () => {
-//     return (
-//         <div>
-//             <img src={City} alt="" />
-//         </div>
-//     )
-// }
-
-// export default Careers
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import busimage from "../../../assets/images/bus.png";
 
 const Careers = () => {
+    const [textIndex, setTextIndex] = useState(0);
+    const [showBus, setShowBus] = useState(true);
+    const sentence = "The bus is moving synchronously with this text.";
+
+    useEffect(() => {
+        if (textIndex < sentence.length && showBus) {
+            const interval = setInterval(() => {
+                setTextIndex((prev) => prev + 1);
+            }, 100); // Speed of letter animation
+            return () => clearInterval(interval);
+        } else if (textIndex === sentence.length) {
+            // End bus animation after the sentence
+            setTimeout(() => setShowBus(false), 1000); // Fade-out delay
+        }
+    }, [textIndex, showBus, sentence.length]);
+
     return (
         <>
-            <div>
-                <div className="relative h-40 lg:bg-gradient-to-b lg:from-black lg:to-white mobile-header"></div>
-                <div className="container mt-5 py-6 flex justify-center items-center">
-                    <div className="card shadow-lg p-4 w-96">
-                        <div className="card-body">
-                            <h5 className="card-title text-center text-xl font-bold mb-4">Login</h5>
-                            <form>
-                                <div className="mb-3">
-                                    <label htmlFor="email" className="form-label block text-gray-700">Email address</label>
-                                    <input
-                                        type="email"
-                                        className="form-control block w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                                        id="email"
-                                        placeholder="Enter your email"
-                                    />
-                                </div>
+            {/* Parent Container for Bus and Text */}
+            <div className="relative w-88 h-32 md:bg-gradient-to-b from-black to-white mb-10"></div>
+            <div className="flex justify-center items-center">
+                {/* Moving Bus Container */}
+                {/* <div className="relative w-full">
 
-                                <div className="mb-3">
-                                    <label htmlFor="password" className="form-label block text-gray-700">Password</label>
-                                    <input
-                                        type="password"
-                                        className="form-control block w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                                        id="password"
-                                        placeholder="Enter your password"
-                                    />
-                                </div>
+                    <div className="position-relative text-center z-10"> */}
+                {/* <div className="fw-bold text-primary text-animation">
+                            {sentence.slice(0, textIndex)}
+                        </div> */}
+            </div>
 
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="form-check">
-                                        <input
-                                            type="checkbox"
-                                            className="form-check-input h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                                            id="rememberMe"
-                                        />
-                                        <label htmlFor="rememberMe" className="form-check-label text-gray-700 ml-2">
-                                            Remember me
-                                        </label>
-                                    </div>
-                                    <a href="#" className="text-sm text-blue-500 hover:underline">
-                                        Forgot password?
-                                    </a>
-                                </div>
+            {/* {showBus && (
+                        <img
+                            src={busimage}
+                            alt="Moving Bus"
+                            className="bus-animation absolute top-1/2 transform -translate-y-1/2 w-20"
+                        />
+                    )} */}
+            {/* </div>
+            </div> */}
 
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary w-full bg-red-900 hover:bg-red-700 text-white py-2 px-4 rounded"
-                                >
-                                    Login
-                                </button>
-                            </form>
-                        </div>
+            {/* Card Section (for the login form) */}
+            <div className="max-w-md mx-auto mb-6 bg-white rounded-lg shadow-lg p-6">
+                <h5 className="text-center text-2xl font-bold text-gray-800">Login</h5>
+                <form>
+                    {/* Name Input */}
+                    <div className="mb-4">
+                        <label
+                            htmlFor="name"
+                            className="block text-sm font-medium text-gray-700 mb-1"
+                        >
+                            Name
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            className="block w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        />
                     </div>
-                </div>
+
+                    {/* Email Input */}
+                    <div className="mb-4">
+                        <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-gray-700 mb-1"
+                        >
+                            Email address
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            className="block w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        />
+                    </div>
+
+                    {/* Password Input */}
+                    <div className="mb-4">
+                        <label
+                            htmlFor="password"
+                            className="block text-sm font-medium text-gray-700 mb-1"
+                        >
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            className="block w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        />
+                    </div>
+
+                    {/* Remember Me and Forgot Password */}
+                    <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                                className="h-4 w-4 text-red-900 border-gray-300 rounded focus:ring-blue-500"
+                            />
+                            <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-700">
+                                Remember me
+                            </label>
+                        </div>
+                        <a href="#" className="text-sm text-red-900 hover:underline">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    {/* Login Button */}
+                    <button
+                        type="submit"
+                        className="w-full bg-red-900 hover:bg-red-700 text-white py-2 px-4 rounded text-sm font-medium"
+                    >
+                        Login
+                    </button>
+                </form>
             </div>
         </>
     );

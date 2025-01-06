@@ -14,7 +14,7 @@ import Image4 from "../../../assets/images/img4.png";
 import busimage from "../../../assets/images/bus.png";
 
 const ContactUs = () => {
-  // const [count, setCount] = useState(1);
+  const [isBusMoved, setIsBusMoved] = useState(false); // State to track if the bus has moved fully
   const [inView, setInView] = useState(false);
   const countUpRef = useRef(null);
 
@@ -82,6 +82,31 @@ const ContactUs = () => {
     };
   }, []);
 
+  const [textIndex, setTextIndex] = useState(0);
+  const [showBus, setShowBus] = useState(true);
+  const sentence = "Indias 1 home solar company";
+
+  useEffect(() => {
+    if (textIndex < sentence.length && showBus) {
+      const interval = setInterval(() => {
+        setTextIndex((prev) => prev + 1);
+      }, 100); // Speed of letter animation
+      return () => clearInterval(interval);
+    } else if (textIndex === sentence.length) {
+      // End bus animation after the sentence
+      setTimeout(() => setShowBus(false), 1000); // Fade-out delay
+    }
+  }, [textIndex, showBus, sentence.length]);
+
+  useEffect(() => {
+    // After the bus has moved fully, hide the text
+    const timer = setTimeout(() => {
+      setIsBusMoved(true);
+    }, 5000); // 5000ms corresponds to the bus movement duration
+
+    return () => clearTimeout(timer); // Clean up the timer on unmount
+  }, []);
+
   return (
     <>
       <div className="relative h-screen">
@@ -99,15 +124,42 @@ const ContactUs = () => {
       justify-center items-center md:justify-end md:items-start"
         >
           <h1 className="m-0 text-4xl md:text-4xl font-bold text-center md:text-left">
-            India's top companies choose Solar Square at time
+            India's top companies choose Solar Ark
           </h1>
           <button className="mt-4 bg-red-900 text-white py-4 px-6 rounded-md">
             Get A Quote
           </button>
         </div>
       </div>
+
+      {/* moving bus */}
+      <div className="container relative flex justify-center items-center mb-10 h-[200px]">
+        {/* Moving Bus Container */}
+        <div className="relative w-full">
+          {/* Animated Text */}
+          <div className="position-relative text-center z-10">
+            <div
+              className="font-bold  text-red-900 bg-transparent text-animation
+                   text-2xl md:text-8xl text-center"
+            >
+              {sentence.slice(0, textIndex)}
+            </div>
+          </div>
+
+          {/* Animated Bus */}
+          {showBus && (
+            <img
+              src={busimage}
+              alt="Moving Bus"
+              className="bus-animation absolute top-1/2 transform -translate-y-1/2 w-20"
+            />
+          )}
+        </div>
+      </div>
+
+      {/* moving bus */}
       {/* solar project */}
-      <div className="bg-red-900 flex flex-col items-center py-12">
+      <div className="bg-red-900 flex flex-col items-center py-12 mb-3">
         <div className="grid solution-content grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl  px-5 ">
           <div className="p-6 flex flex-col justify-center  text-white  relative overflow-hidden">
             <h3 className="lg:text-3xl md:text-1xl font-semibold mb-4 ">
@@ -240,9 +292,8 @@ const ContactUs = () => {
 
           {/* Text */}
           <p className="text-center font-semibold mb-2 md:text-2xl text-gray-700">
-            "Innovative Technology at its Finest, delivering superior
-            performance and durability. <br /> where i not had to get involved
-            during"
+            Join us in illuminating the world with the power of solar energy.
+            Together, <br /> we can make a difference, one panel at a time.
           </p>
 
           {/* Right Quote */}
@@ -272,7 +323,7 @@ const ContactUs = () => {
       </div>
 
       {/* section fourth */}
-      <div className="bg-white flex flex-col items-center py-12">
+      <div className="bg-white flex flex-col items-center pb-12">
         <h2 className="p-3 md:text-4xl text-center font-bold text-gray-800 mb-8">
           Hassel-free professional and friendly installtion experience
           <span className="block text-center">
@@ -292,9 +343,9 @@ const ContactUs = () => {
                 Innovative Technology
               </h3>
               <p className="text-white  bg-gradient-to-t from-red-800 to-transparent  z-0">
-                We Utilize The Latest Advancements In Solar Technology To
-                Deliver Top-Of-The-Line Products That Offer Superior Performance
-                And Durability.
+                To make solar energy accessible to everyone and provide tangible
+                solutions that contribute to the global fight against climate
+                change
               </p>
             </div>
           </div>
@@ -308,12 +359,12 @@ const ContactUs = () => {
 
             <div className="flex flex-col justify-end p-2 flex-grow relative z-10">
               <h3 className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
-                Innovative Technology
+                Solar System
               </h3>
               <p className="text-white bg-gradient-to-t from-red-800 to-transparent  z-0">
-                We Utilize The Latest Advancements In Solar Technology To
-                Deliver Top-Of-The-Line Products That Offer Superior Performance
-                And Durability.
+                Solar Ark empowers individuals, organizations, and communities
+                to embrace eco-friendly practices and become leaders in
+                sustainability.
               </p>
             </div>
           </div>
@@ -429,12 +480,17 @@ const ContactUs = () => {
 
           {/* Text Section */}
           <div className="flex-[2] text-white bg-red-900 p-6">
-            <h2 className="text-2xl font-bold mb-4">Card Title</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              environmental responsibility
+            </h2>
             <p className="mb-6">
-              This is a detailed description or text content that goes alongside
-              the image. You can write as much as needed here. This is a
-              detailed description or text content that goes alongside the
-              image. You can write as much as needed here.
+              At Solar Ark, we are pioneers in the solar energy revolution,
+              dedicated to providing innovative, cost-effective, and sustainable
+              solar solutions to homes, businesses, and industries across the
+              globe. We believe that renewable energy is the key to building a
+              brighter, more sustainable future, and we are committed to
+              delivering clean, reliable energy solutions that reduce carbon
+              footprints and promote environmental responsibility.
             </p>
             <div>
               <p className="text-center">
@@ -457,11 +513,15 @@ const ContactUs = () => {
           {/* Text Section */}
           <div className="flex-[2] bg-gray-200 p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              Card Title
+              Solar Systems
             </h2>
             <p className="text-black mb-6">
-              This is a detailed description or text content that goes alongside
-              the image. You can write as much as needed here. This is a
+              With a focus on quality, efficiency, and customer satisfaction, we
+              ensure that each solar solution is tailored to the unique needs of
+              our clients. Whether you're looking to reduce your home’s energy
+              costs, transition your business to renewable power, or implement
+              large-scale solar systems in industrial facilities, Solar Ark is
+              here to guide you every step of the way.
             </p>
             <p className="text-center">You can write as much as needed here.</p>
           </div>

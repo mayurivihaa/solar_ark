@@ -1,7 +1,7 @@
 // import React from "react";
 import React, { useState, useEffect, useRef } from "react";
 import CountUp from "react-countup";
-import solarPanel3 from "../../../assets/images/solar-panel3.jpeg";
+import solarPanel1 from "../../../assets/images/solar-panel1.jpg";
 import solarPanel2 from "../../../assets/images/bottom-right.png";
 
 const Services = () => {
@@ -10,86 +10,85 @@ const Services = () => {
         <>
             <div className="relative h-40 lg:bg-gradient-to-b lg:from-black lg:to-white mobile-header"></div>
 
-            <div className="bg-white flex flex-col items-center md:py-12">
+            <div className="bg-white flex flex-col items-center md:py-6">
                 <h2 className="md:text-4xl text-center font-bold text-gray-800 mb-8">
                     Our Services
                 </h2>
-                <div className="h-[400px] my-6 grid solution-content grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl px-4">
+                <div className="h-[400px] mb-3 md:my-6 grid solution-content grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl px-4">
                     {/* Service 1 */}
                     <div
-                        className="flex flex-col justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
-                        style={{ backgroundImage: `url(${solarPanel3})` }}
+                        className="flex flex-col justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400  relative overflow-hidden transition bg-cover bg-center"
+                        style={{ backgroundImage: `url(${solarPanel1})` }}
                     >
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-red-800 via-transparent to-transparent z-0"></div>
 
-                        <div className="flex flex-col justify-end p-2 flex-grow relative z-10">
-                            <h3 className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
+                        <div className="flex flex-col justify-end p-2 flex-grow relative z-0">
+                            <a href="/homes" className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
                                 Homes
-                            </h3>
-                            <p className="text-white bg-gradient-to-t from-red-800 to-transparent z-0">
-                                We Utilize The Latest Advancements In Solar Technology To Deliver Top-Of-The-Line Products That Offer Superior Performance And Durability.
+                            </a>
+                            <p className="text-white bg-gradient-to-t from-red-800 via-transparent to-transparent z-0">
+                                Custom-designed solar systems for homeowners to reduce energy bills and increase sustainability, ensuring clean energy independence.
+
                             </p>
                         </div>
                     </div>
 
                     {/* Service 2 */}
                     <div
-                        className="flex flex-col justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
-                        style={{ backgroundImage: `url(${solarPanel3})` }}
+                        className="flex flex-col w-full justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400  relative overflow-hidden transition bg-cover bg-center"
+                        style={{ backgroundImage: `url(${solarPanel1})` }}
                     >
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-red-800 via-transparent to-transparent z-0"></div>
 
-                        <div className="flex flex-col justify-end p-2 flex-grow relative z-10">
-                            <h3 className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
+                        <div className="flex flex-col justify-end p-2 flex-grow relative z-0">
+                            <a href="/housing" className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
                                 Housing Society
-                            </h3>
+                            </a>
                             <p className="text-white bg-gradient-to-t from-red-800 via-transparent to-transparent z-0">
-                                We Utilize The Latest Advancements In Solar Technology To Deliver Top-Of-The-Line Products That Offer Superior Performance And Durability.
+                                Efficient solar energy solutions for entire housing communities, promoting collective sustainability and energy savings for residents.
+
                             </p>
                         </div>
                     </div>
-                </div>
-
-                {/* Other Services */}
-                <div className="h-[400px] mb-5 grid solution-content grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl px-4">
-                    {/* Service 3 */}
                     <div
                         className="flex flex-col justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
-                        style={{ backgroundImage: `url(${solarPanel3})` }}
+                        style={{ backgroundImage: `url(${solarPanel1})` }}
                     >
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-red-800 via-transparent to-transparent z-0"></div>
 
-                        <div className="flex flex-col justify-end p-2 flex-grow relative z-10">
-                            <h3 className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
+                        <div className="flex flex-col justify-end p-2 flex-grow relative z-0">
+                            <a href="/commercial" className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
                                 Commercial
-                            </h3>
+                            </a>
                             <p className="text-white bg-gradient-to-t from-red-800 to-transparent z-0">
-                                We Utilize The Latest Advancements In Solar Technology To Deliver Top-Of-The-Line Products That Offer Superior Performance And Durability.
+                                Tailored solar installations for businesses that reduce operational costs and enhance environmental responsibility, optimizing energy usage.
+
                             </p>
                         </div>
                     </div>
-
-                    {/* Service 4 */}
                     <div
                         className="flex flex-col justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
-                        style={{ backgroundImage: `url(${solarPanel3})` }}
+                        style={{ backgroundImage: `url(${solarPanel1})` }}
                     >
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-red-800 via-transparent to-transparent z-0"></div>
 
                         <div className="flex flex-col mb-4 justify-end p-2 flex-grow relative z-0">
-                            <h3 className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
+                            <a href="/industries" className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
                                 Industrials
-                            </h3>
+                            </a>
                             <p className="text-white bg-gradient-to-t from-red-800 via-transparent to-transparent z-0">
-                                We Utilize The Latest Advancements In Solar Technology To Deliver Top-Of-The-Line Products That Offer Superior Performance And Durability.
+                                Large-scale solar systems for industrial facilities, designed to significantly cut energy expenses while boosting long-term operational efficiency.
+
                             </p>
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
             {/* Full-Screen Section */}
@@ -107,7 +106,7 @@ const Services = () => {
                     className="absolute inset-0 bg-black bg-opacity-50 flex flex-col text-white px-12 pb-8 justify-center items-center md:justify-end md:items-start z-10"
                 >
                     <h1 className="m-0 text-4xl md:text-4xl font-bold text-center md:text-left">
-                        India's top companies choose Solar Square
+                        India's top companies choose Solar Ark
                     </h1>
                     <button className="mt-4 bg-red-900 text-white py-4 px-6 rounded-md">
                         Get A Quote
@@ -117,18 +116,18 @@ const Services = () => {
 
             {/* Third Section */}
             <div className="container mx-auto my-6 px-4 md:py-12 max-w-6xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid  h-full grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* YouTube Video */}
                     <div className="flex flex-col">
                         <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
                             90% of customers recommend us <br /> to use solar ark
                         </h2>
-                        <p className="mb-2">India's top companies choose Solar Square</p>
+                        <p className="mb-2 font-bold">India's top companies choose Solar ark</p>
                         <div className="aspect-w-26 aspect-h-14">
                             <iframe
-                                className="w-full h-full rounded-lg shadow-lg"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                                title="YouTube video"
+                                className="w-full h-[400px] rounded-lg shadow-lg"
+                                src="https://www.youtube.com/embed/2Apa2WcG9z0"
+                                title="How to Install Solar Panels - a COMPLETE DIY Guide"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             ></iframe>
@@ -138,24 +137,21 @@ const Services = () => {
                     {/* Cards Section */}
                     <div className="flex flex-col gap-6">
                         {/* Large Card */}
-                        <div className="bg-red-900 rounded-lg shadow-lg p-6 flex-1 z-0">
-                            <h3 className="text-lg text-white font-semibold mb-2">
-                                Large Card
-                            </h3>
+                        <div className="bg-red-900 rounded-lg shadow-lg p-6 h-[250px] flex flex-col">
+                            <h3 className="text-lg text-white font-semibold mb-2">Solar Ark</h3>
                             <p className="text-white">
-                                This is the large card. Add your content here, like an image, text, or other elements.
+                                Efficient solar solutions for sustainable and cost-effective living.
                             </p>
                         </div>
                         {/* Small Card */}
-                        <div className="bg-[#eb9288d4] rounded-lg shadow-lg p-6 flex-1 z-10">
-                            <h3 className="text-lg text-white font-semibold mb-2">
-                                Small Card
-                            </h3>
+                        <div className="bg-[#eb9288d4] rounded-lg shadow-lg p-6 md:w-[90%] h-[200px] self-center flex flex-col">
+                            <h3 className="text-lg text-white font-semibold mb-2">Solar Panel</h3>
                             <p className="text-white">
-                                This is the small card. It's perfect for shorter content or brief highlights.
+                                Eco-friendly solar panels to power your business.
                             </p>
                         </div>
                     </div>
+
                 </div>
             </div>
 

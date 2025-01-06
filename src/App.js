@@ -16,6 +16,11 @@ import Careers from './pages/solar_components/Careers/Careers';
 import Home from './pages/solar_components/Home/Home';
 import OurTeam from './pages/solar_components/OurTeam/OurTeam';
 import EarnWithUs from './pages/solar_components/EarnWithUS/EarnWithUs';
+import Homes from './pages/solar_components/OurServices/Homes';
+import Commercial from './pages/solar_components/OurServices/Commercial';
+import Industries from './pages/solar_components/OurServices/Industries';
+import Housing from './pages/solar_components/OurServices/Housing';
+import LocateUs from './pages/solar_components/LocateUs/LocateUs';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -67,6 +72,32 @@ const App = () => {
           element: <Careers />
         }
         ,
+        {
+          path: '/homes',
+          element: <Homes />
+        }
+        ,
+        {
+          path: '/commercial',
+          element: <Commercial />
+        }
+        ,
+        {
+          path: '/housing',
+          element: <Housing />
+        }
+        ,
+        {
+          path: '/industries',
+          element: <Industries />
+        }
+        ,
+        {
+          path: '/locateus',
+          element: <LocateUs />
+        }
+        ,
+
         {
           path: '/solar_calculator',
           element: <SolarCalculator />
