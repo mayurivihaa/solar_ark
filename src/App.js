@@ -21,6 +21,7 @@ import Commercial from './pages/solar_components/OurServices/Commercial';
 import Industries from './pages/solar_components/OurServices/Industries';
 import Housing from './pages/solar_components/OurServices/Housing';
 import LocateUs from './pages/solar_components/LocateUs/LocateUs';
+import ScrollButton from './pages/solar_components/layouts/ScrollButton';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -125,7 +126,12 @@ const App = () => {
     },
 
   ])
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ScrollButton/>
+    </>
+  );
 
 }
 

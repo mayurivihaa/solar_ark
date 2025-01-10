@@ -391,3 +391,51 @@
   transform: translateY(0);
   animation: fadeIn 1.8s ease-in-out;
 }
+
+/* src/components/ScrollButton.css */
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #d15a33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.scroll-button:hover {
+  background: #db5b30;
+  transform: scale(1.1);
+}
+
+.scroll-button.show {
+  opacity: 1;
+}
+
+.scroll-icon {
+  font-size: 24px;
+}
+
+/* Responsive design adjustments for mobile */
+@media (max-width: 768px) {
+  .scroll-button {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+  }
+
+  .scroll-icon {
+      font-size: 20px;
+  }
+}
