@@ -11,7 +11,7 @@ const Services = () => {
             <div className="relative h-40 lg:bg-gradient-to-b lg:from-black lg:to-white mobile-header"></div>
 
             <div className="bg-white flex flex-col items-center md:py-6">
-                <h2 className="md:text-4xl text-center font-bold text-gray-800 mb-8">
+                <h2 className="md:text-4xl text-2xl text-center font-bold text-gray-800 mb-8">
                     Our Services
                 </h2>
                 <div className="h-[400px] mb-3 md:my-6 grid solution-content grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl px-4">
@@ -36,7 +36,7 @@ const Services = () => {
 
                     {/* Service 2 */}
                     <div
-                        className="flex flex-col w-full justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400  relative overflow-hidden transition bg-cover bg-center"
+                        className="flex flex-col h-88 w-full justify-between rounded-lg shadow-lg p-2 items-center border border-gray-400  relative overflow-hidden transition bg-cover bg-center"
                         style={{ backgroundImage: `url(${solarPanel1})` }}
                     >
                         {/* Gradient Overlay */}
@@ -53,7 +53,7 @@ const Services = () => {
                         </div>
                     </div>
                     <div
-                        className="flex flex-col justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
+                        className="flex flex-col justify-between w-full h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
                         style={{ backgroundImage: `url(${solarPanel1})` }}
                     >
                         {/* Gradient Overlay */}
@@ -70,13 +70,13 @@ const Services = () => {
                         </div>
                     </div>
                     <div
-                        className="flex flex-col justify-between h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
+                        className="flex flex-col justify-between w-full h-full rounded-lg shadow-lg p-2 items-center border border-gray-400 relative overflow-hidden transition bg-cover bg-center"
                         style={{ backgroundImage: `url(${solarPanel1})` }}
                     >
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-red-800 via-transparent to-transparent z-0"></div>
 
-                        <div className="flex flex-col mb-4 justify-end p-2 flex-grow relative z-0">
+                        <div className="flex flex-col justify-end p-2 flex-grow relative z-0">
                             <a href="/industries" className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
                                 Industrials
                             </a>

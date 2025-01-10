@@ -17,6 +17,13 @@ import panel4 from "../../../assets/images/solar-panel4.jpg";
 import Search from "../../../assets/images/search.png";
 import pune from "../../../assets/images/pune.jpg";
 import aurangabad from "../../../assets/images/aurangabad.jpg";
+import journy from "../../../assets/images/ourjurney (1).png";
+import logo1 from "../../../assets/images/logo (1).png";
+import logo from "../../../assets/images/logo.png";
+import logo2 from "../../../assets/images/logo (2).png";
+import logo3 from "../../../assets/images/logo (3).png";
+import logo4 from "../../../assets/images/logo (4).png";
+
 
 const OurTeam = () => {
     const milestones = [
@@ -60,16 +67,40 @@ const OurTeam = () => {
             setPositions(newPositions);
         }
     }, [milestones.length]);
+
+
+
+    useEffect(() => {
+        const elements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible'); // Add 'visible' class
+                        observer.unobserve(entry.target); // Stop observing after it's visible
+                    }
+                });
+            },
+            { threshold: 0.1 } // Adjust threshold for when to trigger animation
+        );
+
+        elements.forEach((el) => observer.observe(el));
+
+        return () => {
+            elements.forEach((el) => observer.unobserve(el));
+        };
+    }, []);
     return (
         <>
             <div className="relative h-40 lg:bg-gradient-to-b lg:from-black lg:to-white mobile-header"></div>
-            <div className="min-h-screen md:pt-6 bg-white-100">
+            <div className="min-h-screen md:pt-2 bg-white-100">
                 <div>
-                    <h1 className="text-center md:text-5xl font-semibold px-2 md:my-10">
+                    <h1 className="text-center text-2xl md:text-5xl font-semibold px-2 md:py-5">
                         Meet Our Team
                     </h1>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4">
+                <div className="grid grid-cols-1 fade-in  md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4">
                     <div className="bg-white rounded overflow-hidden max-w-sm mx-auto">
                         <div className="bg-white  rounded-tr-3xl overflow-hidden max-w-sm mx-auto">
                             {/* Image Section */}
@@ -159,7 +190,7 @@ const OurTeam = () => {
                 </div>
 
                 {/* our team */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4">
+                <div className="grid grid-cols-1 fade-in md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4">
                     <div className="bg-white rounded overflow-hidden max-w-sm mx-auto">
                         <div className="bg-white  rounded-tr-3xl overflow-hidden max-w-sm mx-auto">
                             {/* Image Section */}
@@ -247,7 +278,7 @@ const OurTeam = () => {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4">
+                <div className="grid grid-cols-1 fade-in md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4">
                     <div className="bg-white rounded overflow-hidden max-w-sm mx-auto">
                         <div className="bg-white  rounded-tr-2xl overflow-hidden max-w-sm mx-auto">
                             {/* Image Section */}
@@ -335,7 +366,7 @@ const OurTeam = () => {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4">
+                <div className="grid grid-cols-1 fade-in md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4">
                     <div className="bg-white rounded overflow-hidden max-w-sm mx-auto">
                         <div className="bg-white  rounded-tr-3xl overflow-hidden max-w-sm mx-auto">
                             {/* Image Section */}
@@ -424,8 +455,8 @@ const OurTeam = () => {
                     </div>
                 </div>
 
-                <div className="text-center  mb-6">
-                    <h1 className="font-semibold md:text-5xl md:mt-10 mb-10">
+                <div className="text-center fade-in mb-6">
+                    <h1 className="font-semibold text-2xl md:text-5xl md:mt-10 mb-10">
                         We make <span className="text-[#eb9288d4]">rooftop solar </span>with
                         intigrity
                     </h1>
@@ -438,7 +469,7 @@ const OurTeam = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 md:px-6 lg:px-10">
                     {/* First Column */}
-                    <div>
+                    <div className="fade-in">
                         <img
                             src={pune}
                             className="mx-auto h-[400px]  object-cover shadow-1-strong rounded-lg mb-4"
@@ -446,17 +477,16 @@ const OurTeam = () => {
                         />
                         <img
                             src={panel4}
-                            // src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                            className=" mx-auto h-auto shadow-1-strong rounded-lg"
+                            className="mx-auto w-full h-auto shadow-1-strong rounded-lg"
                             alt="Boat on Calm Water"
                         />
                     </div>
 
                     {/* Second Column */}
-                    <div>
+                    <div className="fade-in">
                         <img
                             src={panel4}
-                            className="mx-auto h-auto shadow-1-strong rounded-lg mb-4"
+                            className="mx-auto w-full h-auto shadow-1-strong rounded-lg mb-4"
                             alt="Boat on Calm Water"
                         />
                         <img
@@ -467,10 +497,10 @@ const OurTeam = () => {
                     </div>
 
                     {/* Third Column */}
-                    <div>
+                    <div className="fade-in">
                         <img
                             src={panel4}
-                            className="mx-auto h-auto shadow-1-strong rounded-lg mb-4"
+                            className="mx-auto w-full h-auto shadow-1-strong rounded-lg mb-4"
                             alt="Waves at Sea"
                         />
                         <img
@@ -481,25 +511,24 @@ const OurTeam = () => {
                     </div>
                 </div>
 
-                <div className="mt-12 pb-3 pt-4">
-                    <div className="text-center mb-6">
-                        <h1 className="font-semibold md:text-5xl">
+                <div className="md:mt-12 pb-3 pt-4">
+                    <div className="text-center fade-in mb-6">
+                        <h1 className="font-semibold text-2xl md:text-5xl">
                             Pioneering solar excellence : <br />
                             Our vission in action
                         </h1>
-                        <p className="mt-7 px-2 md:text-2xl">
-                            solar is a team of 700+ enginners, MBAs, scientiest, creative
-                            thinkers driven by the single <br /> vision of asselarating
-                            adaption of solar india it is an hounor to be
+                        <p className="my-7 px-3 md:text-2xl">
+                            By joining Solar Ark, you not only advance your career but also become <br /> a part of a global movement committed to sustainability and positive environmental impact.
+
                         </p>
 
                         {/* card */}
-                        <div className="md:mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-                            <div className="p-6 flex flex-col items-center relative overflow-hidden">
+                        <div className="md:mt-10 fade-in grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+                            <div className="p-6 fade-in bg-[#D15A33] text-white flex flex-col border items-center relative overflow-hidden">
                                 <div className="text-4xl solar-colour">
                                     <img src={House} className="imgpanel" alt="" />
                                 </div>
-                                <p className="md:mb-6 md:text-[20px]">
+                                <p className="md:my-6 border p-3 rounded md:text-[20px]">
                                     Discover the future of energy with Solar Ark’s advanced solar
                                     panel systems. We offer reliable, affordable, and efficient
                                     solar solutions designed to reduce your energy expenses and
@@ -507,11 +536,11 @@ const OurTeam = () => {
                                 </p>
                             </div>
 
-                            <div className="md:p-6 flex flex-col items-center relative overflow-hidden">
+                            <div className="p-6 fade-in bg-[#D15A33] text-white  flex border flex-col items-center relative overflow-hidden">
                                 <div className="text-4xl solar-colour">
                                     <img src={Panel} className="imgpanel" alt="" />
                                 </div>
-                                <p className="mb-6 md:text-[20px]">
+                                <p className="md:my-6 border p-3  rounded md:text-[20px]">
                                     Harness the power of solar energy with Solar Ark’s
                                     cutting-edge solar panel technology. Whether you're a
                                     homeowner or a business, we deliver customized, cost-effective
@@ -519,11 +548,11 @@ const OurTeam = () => {
                                 </p>
                             </div>
 
-                            <div className="md:p-6 flex flex-col items-center relative overflow-hidden">
+                            <div className="p-6 fade-in bg-[#D15A33] text-white  flex border flex-col items-center relative overflow-hidden">
                                 <div className="text-4xl solar-colour">
                                     <img src={Search} className="imgpanel" alt="" />
                                 </div>
-                                <p className="mb-6 md:text-[20px]">
+                                <p className="md:my-6 border p-3 rounded md:text-[20px]">
                                     Solar Ark is leading the charge in sustainable energy by
                                     providing innovative solar panel solutions for homes,
                                     businesses, and communities. We’re here to help you reduce
@@ -537,11 +566,11 @@ const OurTeam = () => {
                 {/* wave section */}
 
                 <div>
-                    <h1 className="text-center md:text-5xl sm:mb-8 font-semibold">
+                    <h1 className="text-center fade-in text-2xl md:text-5xl md:my-10 sm:mb-8 font-semibold">
                         Our Journey
                     </h1>
 
-                    <div className="min-h-screen mobile-curve bg-white relative flex justify-center items-center gap-4">
+                    <div className="min-h-screen mobile-curve mb-6 bg-white relative flex justify-center items-center gap-4">
                         {/* SVG Wave Path (hidden on mobile) */}
                         <svg
                             className="absolute inset-0 w-full h-full hidden md:block"
@@ -563,41 +592,40 @@ const OurTeam = () => {
                         </svg>
 
                         {/* Icons */}
-                        <div className="absolute h-screen flex w-full flex-col md:flex-row justify-around  md:px-8 items-center">
+                        <div className="absolute h-screen mb-8 flex w-full flex-col md:flex-row justify-around  md:px-8 items-center">
                             {/* Icon 1 */}
-                            <div className="flex flex-col items-center md:mb-0">
-                                <div className="w-24 h-24 bg-white shadow-xl text-red-900 rounded-full flex items-center justify-center">
-                                    <FaSolarPanel size={32} />
-                                </div>
+                            <div className="flex flex-col items-center md:mb-8">
+                                <img src={logo} alt="" />
                                 <p className="mt-2 text-center text-sm font-bold">2015</p>
                                 <p className="font-bold">SolarARK began</p>
                             </div>
 
                             {/* Icon 2 */}
                             <div className="flex flex-col items-center md:mb-0">
-                                <div className="w-24 h-24 bg-white shadow-xl text-red-900 rounded-full flex items-center justify-center">
-                                    <FaHandshake size={32} />
-                                </div>
-                                <p className="mt-2 text-center text-sm font-medium">2016</p>
-                                <p className="font-bold">First milestone</p>
+                                <img src={logo1} alt="" />
+                                <p className="mt-2 text-center text-sm font-medium">100+</p>
+                                <p className="font-bold">Client Solarised</p>
                             </div>
 
                             {/* Icon 3 */}
                             <div className="flex flex-col items-center md:mb-0">
-                                <div className="w-24 h-24 bg-white shadow-xl text-red-900 rounded-full flex items-center justify-center">
-                                    <FaHome size={32} />
-                                </div>
-                                <p className="mt-2 text-center text-sm font-medium">2017</p>
-                                <p className="font-bold">New expansion</p>
+                                <img src={logo2} alt="" />
+                                <p className="mt-2 text-center text-sm font-medium">18000+</p>
+                                <p className="font-bold">Happy Customers</p>
+                            </div>
+
+                            <div className="flex flex-col items-center md:mb-0">
+
+                                <img src={logo3} alt="" />
+                                <p className="mt-2 text-center text-sm font-medium">170+</p>
+                                <p className="font-bold">Statisfied Housing Socities</p>
                             </div>
 
                             {/* Icon 4 */}
                             <div className="flex flex-col items-center md:mb-0">
-                                <div className="w-24 h-24 bg-white shadow-xl text-red-900 rounded-full flex items-center justify-center">
-                                    <FaBuilding size={32} />
-                                </div>
-                                <p className="mt-2 text-center text-sm font-medium">2018</p>
-                                <p className="font-bold">Partnerships</p>
+                                <img src={logo4} alt="" />
+                                <p className="mt-2 text-center text-sm font-medium">105+</p>
+                                <p className="font-bold">Delighted Commercial Businesses</p>
                             </div>
 
                             {/* Icon 5 */}
@@ -605,8 +633,10 @@ const OurTeam = () => {
                     </div>
 
                     <div className="h-80 curve-desktop bg-white relative flex justify-center items-center">
+                        <img src={journy} alt="" className="mb-5 fade-in" />
+
                         {/* SVG Path */}
-                        <svg
+                        {/* <svg
                             width="1200"
                             height="500"
                             viewBox="0 0 1200 200"

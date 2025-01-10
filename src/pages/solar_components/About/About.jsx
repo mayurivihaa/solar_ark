@@ -11,7 +11,7 @@ const About = () => {
       <div className="relative h-40 sm:h-28 lg:my-10 lg:bg-gradient-to-b lg:from-black lg:to-white mobile-header"></div>
       <div className="flex flex-col lg:flex-row items-center lg:items-start  justify-center gap-8 px-4 sm:px-6 lg:px-12 py-8 sm:py-12 bg-white text-gray-800 mobile-section">
         {/* Left Column: Images Section */}
-        <div className="relative  flex  justify-center lg:w-2/4 w-full image-section">
+        <div className="relative flex  justify-center lg:w-2/4 w-full image-section">
           {/* Top Image */}
 
           <div className="relative z-11 w-60 sm:w-72 lg:w-96 h-36  lg:h-60 t-img rounded-lg overflow-hidden shadow-lg -mr-8 lg:mr-0 sm:right-25 lg:right-24 top-image">

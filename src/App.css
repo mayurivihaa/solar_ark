@@ -366,13 +366,28 @@
   }
 }
 
-@media (max-width: 768px) {
-  .milestone-container {
-    top: 200px !important;
-    font-size: 12px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  .milestone-icon {
-    width: 40px;
-    height: 40px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+/* .fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+} */
+.fade-in {
+  opacity: 0; /* Hidden initially */
+  transform: translateY(20px);
+  transition: opacity 1.8s ease-in-out, transform 1.8s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 1.8s ease-in-out;
 }

@@ -116,11 +116,11 @@ const BookingForm = () => {
               name="electricBill"
               value={formData.electricBill}
               onChange={handleChange}
-              className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-4 text-grey-700 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               required
             >
               <option value="" disabled>
-                <p className="text-gray-700"> Monthly Electric Bill</p>
+                Monthly Electric Bill
               </option>
               <option value="100">$100</option>
               <option value="200">$200</option>

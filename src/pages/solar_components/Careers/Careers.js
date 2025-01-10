@@ -1,51 +1,50 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import busimage from "../../../assets/images/bus.png";
 
 const Careers = () => {
-    const [textIndex, setTextIndex] = useState(0);
-    const [showBus, setShowBus] = useState(true);
-    const sentence = "The bus is moving synchronously with this text.";
+    const [careerData, setCareerData] = useState({
+        name: "",
+        email: "",
+        password: "",
+    });
 
-    useEffect(() => {
-        if (textIndex < sentence.length && showBus) {
-            const interval = setInterval(() => {
-                setTextIndex((prev) => prev + 1);
-            }, 100); // Speed of letter animation
-            return () => clearInterval(interval);
-        } else if (textIndex === sentence.length) {
-            // End bus animation after the sentence
-            setTimeout(() => setShowBus(false), 1000); // Fade-out delay
+    const handleChange = (e) => {
+        setCareerData({ ...careerData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post(
+                "http://localhost:5000/api/careers",
+                careerData
+            );
+            //console.log(response.careerData);
+
+            alert(response.data.message);
+            setCareerData({
+                name: "",
+                email: "",
+                password: ""
+
+            });
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("Error submitting form");
         }
-    }, [textIndex, showBus, sentence.length]);
+    };
 
     return (
         <>
             {/* Parent Container for Bus and Text */}
             <div className="relative w-88 h-32 md:bg-gradient-to-b from-black to-white mb-10"></div>
-            <div className="flex justify-center items-center">
-                {/* Moving Bus Container */}
-                {/* <div className="relative w-full">
-
-                    <div className="position-relative text-center z-10"> */}
-                {/* <div className="fw-bold text-primary text-animation">
-                            {sentence.slice(0, textIndex)}
-                        </div> */}
-            </div>
-
-            {/* {showBus && (
-                        <img
-                            src={busimage}
-                            alt="Moving Bus"
-                            className="bus-animation absolute top-1/2 transform -translate-y-1/2 w-20"
-                        />
-                    )} */}
-            {/* </div>
+            {/* <div className="flex justify-center p-4 items-center">
             </div> */}
-
             {/* Card Section (for the login form) */}
-            <div className="max-w-md mx-auto mb-6 bg-white rounded-lg shadow-lg p-6">
+            <div className="max-w-md mx-auto  md:mb-16 bg-white rounded-lg shadow-lg p-6">
                 <h5 className="text-center text-2xl font-bold text-gray-800">Login</h5>
-                <form>
+                <form onSubmit={handleSubmit}>
                     {/* Name Input */}
                     <div className="mb-4">
                         <label
@@ -57,8 +56,12 @@ const Careers = () => {
                         <input
                             type="text"
                             id="name"
+                            name="name"
+                            value={careerData.name}
+                            onChange={handleChange}
                             placeholder="Enter your name"
                             className="block w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            required
                         />
                     </div>
 
@@ -73,8 +76,12 @@ const Careers = () => {
                         <input
                             type="email"
                             id="email"
+                            name="email"
+                            value={careerData.email}
+                            onChange={handleChange}
                             placeholder="Enter your email"
                             className="block w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            required
                         />
                     </div>
 
@@ -89,8 +96,12 @@ const Careers = () => {
                         <input
                             type="password"
                             id="password"
+                            name="password"
+                            value={careerData.password}
+                            onChange={handleChange}
                             placeholder="Enter your password"
                             className="block w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            required
                         />
                     </div>
 

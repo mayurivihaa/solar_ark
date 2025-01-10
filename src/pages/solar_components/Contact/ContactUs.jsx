@@ -162,10 +162,10 @@ const ContactUs = () => {
       <div className="bg-red-900 flex flex-col items-center py-12 mb-3">
         <div className="grid solution-content grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl  px-5 ">
           <div className="p-6 flex flex-col justify-center  text-white  relative overflow-hidden">
-            <h3 className="lg:text-3xl md:text-1xl font-semibold mb-4 ">
+            <h3 className="lg:text-3xl md:text-1xl text-2xl font-semibold mb-4 ">
               Submit a
             </h3>
-            <h3 className="lg:text-3xl md:text-1xl font-semibold mb-4">
+            <h3 className="lg:text-3xl md:text-1xl text-2xl font-semibold mb-4">
               <span className="text-[#eb9288d4]">Solar Projects</span> enquiry
             </h3>
             <p className=" mb-6">
@@ -291,7 +291,7 @@ const ContactUs = () => {
           <FaQuoteLeft className="text-red-900 w-10 h-10 mr-8" />
 
           {/* Text */}
-          <p className="text-center font-semibold mb-2 md:text-2xl text-gray-700">
+          <p className="text-center text-2xl font-semibold mb-2 md:text-2xl text-gray-700">
             Join us in illuminating the world with the power of solar energy.
             Together, <br /> we can make a difference, one panel at a time.
           </p>
@@ -324,7 +324,7 @@ const ContactUs = () => {
 
       {/* section fourth */}
       <div className="bg-white flex flex-col items-center pb-12">
-        <h2 className="p-3 md:text-4xl text-center font-bold text-gray-800 mb-8">
+        <h2 className="p-3 md:text-4xl text-2xl text-center font-bold text-gray-800 mb-8">
           Hassel-free professional and friendly installtion experience
           <span className="block text-center">
             we are committed to making your solar journey easier
@@ -339,7 +339,7 @@ const ContactUs = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-red-800 via-transparent to-transparent z-0"></div>
 
             <div className="flex flex-col justify-end p-2 flex-grow relative z-10">
-              <h3 className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
+              <h3 className="lg:text-3xl md:text-2xl text-2xl font-semibold text-white mb-2">
                 Innovative Technology
               </h3>
               <p className="text-white  bg-gradient-to-t from-red-800 to-transparent  z-0">
@@ -358,7 +358,7 @@ const ContactUs = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-red-800 via-transparent to-transparent z-0"></div>
 
             <div className="flex flex-col justify-end p-2 flex-grow relative z-10">
-              <h3 className="lg:text-3xl md:text-2xl font-semibold text-white mb-2">
+              <h3 className="lg:text-3xl md:text-2xl text-2xl font-semibold text-white mb-2">
                 Solar System
               </h3>
               <p className="text-white bg-gradient-to-t from-red-800 to-transparent  z-0">
@@ -464,8 +464,8 @@ const ContactUs = () => {
       </div>
 
       {/* section seventh */}
-      <div className="bg-white flex flex-col items-center p-3 py-12">
-        <h2 className="md:text-4xl mt-10  text-center font-bold text-gray-800 mb-8">
+      <div className="bg-white flex flex-col items-center p-3 md:py-12">
+        <h2 className="md:text-4xl text-2xl mt-10  text-center font-bold text-gray-800 mb-8">
           Exceptional quality. End-to-end service. Delighted customers
         </h2>
         <div className="flex md:mt-10 flex-col md:flex-row border rounded-3xl shadow-lg overflow-hidden max-w-4xl mx-auto">
@@ -528,14 +528,14 @@ const ContactUs = () => {
         </div>
         <FaAngleUp className="text-red-900 text-2xl my-6" />
       </div>
-      <div className="bg-white flex flex-col items-center p-3 py-12 border-b border-gray-300">
+      <div className="bg-white flex flex-col items-center p-3 md:py-12 border-b border-gray-300">
         {/* Horizontal Line */}
         <div className="w-full border-t px-4 border-gray-300 mb-4"></div>
 
         {/* Content */}
         <div className="flex justify-between w-full px-4">
           {/* Read More Text */}
-          <div className="text-red-900 font-semibold md:text-2xl">
+          <div className="text-red-900 font-semibold text-2xl md:text-2xl">
             Read more...
           </div>
 
