@@ -160,7 +160,7 @@ const ContactUs = () => {
       {/* moving bus */}
       {/* solar project */}
       <div className="bg-red-900 flex flex-col items-center py-12 mb-3">
-        <div className="grid solution-content grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl  px-5 ">
+        <div className="grid solution-content grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl  px-5 ">
           <div className="p-6 flex flex-col justify-center  text-white  relative overflow-hidden">
             <h3 className="lg:text-3xl md:text-1xl text-2xl font-semibold mb-4 ">
               Submit a
@@ -178,7 +178,7 @@ const ContactUs = () => {
             onSubmit={handleSubmit}
             className="rounded-lg md:px-6 p-3 py-4 flex flex-col bg-white relative overflow-hidden border transition"
           >
-            <div className="mb-4">
+            <div className="mb-3">
               <label className="text-lg font-medium text-gray-700 block">
                 Name <span className="text-red-500">*</span>
               </label>
@@ -191,7 +191,7 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-3">
               <label className="text-lg font-medium text-gray-700 block">
                 Company Name <span className="text-red-500">*</span>
               </label>
@@ -204,7 +204,7 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-3">
               <label className="text-lg font-medium text-gray-700 block">
                 WhatsApp Number <span className="text-red-500">*</span>
               </label>
@@ -217,7 +217,7 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-3">
               <label className="text-lg font-medium text-gray-700 block">
                 City <span className="text-red-500">*</span>
               </label>
@@ -230,7 +230,7 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-3">
               <label className="text-lg font-medium text-gray-700 block">
                 Company Pin Code
               </label>
@@ -243,7 +243,7 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-3">
               <label className="text-lg font-medium text-gray-700 block">
                 Average Monthly Bill <span className="text-red-500">*</span>
               </label>
